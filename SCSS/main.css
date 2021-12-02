@@ -1,0 +1,397 @@
+@import url("https://fonts.googleapis.com/css2?family=News+Cycle&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@700&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  max-width: 100%;
+  max-height: 100%;
+  overflow: hidden;
+  background: #0b0c1a;
+}
+
+:root {
+  --backgroundOnOff: rgb(73, 75, 88);
+}
+
+.header {
+  position: relative;
+  padding: 20px;
+  display: block;
+}
+
+.header .switch {
+  position: absolute;
+  right: 150px;
+}
+
+.header .switch .lightswitchclass {
+  display: block;
+  position: relative;
+  width: 70px;
+  height: 100px;
+  margin: 70px auto;
+  border-radius: 50px;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(93, 94, 109, 0.7)), to(rgba(59, 62, 83, 0.7)));
+  background: linear-gradient(rgba(93, 94, 109, 0.7), rgba(59, 62, 83, 0.7));
+  -webkit-box-shadow: inset 0 -5px 0 #303036, 0 6px 5px rgba(56, 59, 61, 0.459), 3px 16px 5px rgba(56, 67, 71, 0.226);
+          box-shadow: inset 0 -5px 0 #303036, 0 6px 5px rgba(56, 59, 61, 0.459), 3px 16px 5px rgba(56, 67, 71, 0.226);
+  cursor: pointer;
+}
+
+.header .switch .lightswitchclass:before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  bottom: -10px;
+  left: -5px;
+  right: -5px;
+  z-index: -2;
+  background: var(--backgroundOnOff);
+  border-radius: inherit;
+  -webkit-box-shadow: 0 1px 1px rgba(112, 129, 138, 0.2), 0 3px 3px rgba(101, 110, 117, 0.4), inset 0 1px 0 rgba(69, 81, 85, 0.8), 0 0 5px rgba(93, 104, 110, 0.5);
+          box-shadow: 0 1px 1px rgba(112, 129, 138, 0.2), 0 3px 3px rgba(101, 110, 117, 0.4), inset 0 1px 0 rgba(69, 81, 85, 0.8), 0 0 5px rgba(93, 104, 110, 0.5);
+}
+
+.header .switch .shadow {
+  position: absolute;
+  width: 60px;
+  height: 70px;
+  border-radius: 50%;
+  z-index: -1;
+  left: 21px;
+  top: 78px;
+  background: linear-gradient(160deg, rgba(49, 52, 53, 0.7), rgba(170, 160, 140, 0));
+  background: -webkit-linear-gradient(290deg, rgba(32, 34, 36, 0.75), rgba(170, 160, 140, 0));
+  -webkit-filter: blur(3px);
+  filter: opacity(3px);
+}
+
+.header .switch #lightswitch {
+  clip: rect(0 0 0 0);
+  position: absolute;
+  visibility: hidden;
+}
+
+.header .switch #lightswitch:checked ~ .lightswitchclass {
+  background: -webkit-gradient(linear, left top, left bottom, from(#e6e3da), to(#fff));
+  background: linear-gradient(#e6e3da, #fff);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: inset 0 7px 0 #fdfdfd, 0 2px 3px rgba(140, 158, 170, 0.3);
+          box-shadow: inset 0 7px 0 #fdfdfd, 0 2px 3px rgba(140, 158, 170, 0.3);
+  border-bottom: none;
+}
+
+.header .switch #lightswitch:checked ~ .shadow {
+  display: block;
+}
+
+.header .switch #lightswitch ~ .shadow {
+  display: none;
+}
+
+.header .area {
+  position: relative;
+  top: -24px;
+  margin: 0 auto;
+  width: 300px;
+  height: 300px;
+  -webkit-animation: swing 1s infinite ease-in-out alternate;
+          animation: swing 1s infinite ease-in-out alternate;
+  transform-origin: top;
+  -moz-transform-origin: top;
+  -webkit-transform-origin: top;
+}
+
+.header .wire {
+  position: relative;
+  left: 98px;
+  height: 200px;
+  width: 5px;
+  background-color: black;
+}
+
+.header .fixture {
+  position: relative;
+  background-color: grey;
+  width: 20px;
+  height: 25px;
+  left: 92px;
+}
+
+.header .strip {
+  position: relative;
+  width: 21px;
+  height: 2px;
+  right: 1px;
+  top: 4px;
+  background-color: darkgrey;
+}
+
+.header .strip:nth-of-type(2) {
+  top: 7px;
+}
+
+.header .strip:nth-of-type(3) {
+  top: 10px;
+}
+
+.header #bulb {
+  position: relative;
+  width: 85px;
+  height: 85px;
+  left: 60px;
+  bottom: 1px;
+  z-index: -1;
+  background: radial-gradient(circle, #292f36cc, #0b0c1a);
+  border-radius: 50%;
+}
+
+.header #bulb::before {
+  content: '';
+  top: 20px;
+  left: 10px;
+  position: absolute;
+  background: rgba(238, 246, 255, 0.116);
+  height: 20px;
+  width: 15px;
+  border-radius: 80% 20% 56% 44% / 86% 53% 47% 14%;
+  -webkit-filter: blur(2px);
+  filter: opacity(2px);
+}
+
+.header .on {
+  background: radial-gradient(circle, #ffffff, #ffffff) !important;
+  -webkit-box-shadow: 0px 0px 700px 107px #e8faf9;
+  box-shadow: 0 20px 100px 30px #fff, 0 20px 200px 50px #fff, 0 20px 300px 40px #fff, 0 20px 350px #fff, 0 0 400px 10px #fff, 0 0 450px 20px #fff, 0 0 500px 10px #fff;
+}
+
+.header .zig {
+  position: relative;
+  background-color: transparent;
+  width: 14px;
+  height: 7px;
+  border-radius: 5px / 2.5px;
+  left: 34px;
+  border: #a1afaf solid 1px;
+}
+
+.header .zig:nth-of-type(2) {
+  top: -3px;
+}
+
+.header .zig:nth-of-type(3) {
+  top: -6px;
+}
+
+@-webkit-keyframes swing {
+  from {
+    -webkit-transform: rotate(5deg);
+    transform: rotate(5deg);
+  }
+  to {
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
+  }
+}
+
+@keyframes swing {
+  from {
+    -webkit-transform: rotate(5deg);
+    transform: rotate(5deg);
+  }
+  to {
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
+  }
+}
+
+.header .flickering {
+  -webkit-animation: flickering-light 0.3s linear 3s infinite alternate;
+          animation: flickering-light 0.3s linear 3s infinite alternate;
+}
+
+@-webkit-keyframes flickering-light {
+  0%, 50% {
+    background: white;
+    -webkit-box-shadow: 0px 0px 700px 107px #e8faf9;
+    box-shadow: 0 20px 100px 30px #fff, 0 20px 200px 50px #fff, 0 20px 300px 40px #fff, 0 20px 350px #fff, 0 0 400px 10px #fff, 0 0 450px 20px #fff, 0 0 500px 10px #fff, 0px 0px 10px white, 0px 0px 30px rgba(255, 255, 255, 0.8), 0px 0px 50px rgba(255, 255, 255, 0.6), 0px 0px 70px rgba(255, 255, 255, 0.6), 0 0 120px rgba(255, 255, 255, 0.4);
+  }
+  30%, 75%, 100% {
+    background: white;
+    -webkit-box-shadow: 0px 0px 700px 107px #e8faf9;
+    box-shadow: 0px 0px 10px white, 0px 0px 30px rgba(255, 255, 255, 0.2), 0px 0px 50px rgba(255, 255, 255, 0.1), 0px 0px 70px rgba(255, 255, 255, 0.6), 0 0 90px rgba(255, 255, 255, 0.01);
+  }
+}
+
+@keyframes flickering-light {
+  0%, 50% {
+    background: white;
+    -webkit-box-shadow: 0px 0px 700px 107px #e8faf9;
+    box-shadow: 0 20px 100px 30px #fff, 0 20px 200px 50px #fff, 0 20px 300px 40px #fff, 0 20px 350px #fff, 0 0 400px 10px #fff, 0 0 450px 20px #fff, 0 0 500px 10px #fff, 0px 0px 10px white, 0px 0px 30px rgba(255, 255, 255, 0.8), 0px 0px 50px rgba(255, 255, 255, 0.6), 0px 0px 70px rgba(255, 255, 255, 0.6), 0 0 120px rgba(255, 255, 255, 0.4);
+  }
+  30%, 75%, 100% {
+    background: white;
+    -webkit-box-shadow: 0px 0px 700px 107px #e8faf9;
+    box-shadow: 0px 0px 10px white, 0px 0px 30px rgba(255, 255, 255, 0.2), 0px 0px 50px rgba(255, 255, 255, 0.1), 0px 0px 70px rgba(255, 255, 255, 0.6), 0 0 90px rgba(255, 255, 255, 0.01);
+  }
+}
+
+.bg-light-flickering {
+  background: radial-gradient(circle, #bfdff3, #8eaec9);
+  -webkit-animation: flickering-light-bg 0.3s linear 3s infinite alternate;
+          animation: flickering-light-bg 0.3s linear 3s infinite alternate;
+}
+
+@-webkit-keyframes flickering-light-bg {
+  0%, 50% {
+    background: radial-gradient(circle, #a3c5da, #496680);
+  }
+  30%, 75%, 100% {
+    background: #0b0c1a;
+  }
+}
+
+@keyframes flickering-light-bg {
+  0%, 50% {
+    background: radial-gradient(circle, #a3c5da, #496680);
+  }
+  30%, 75%, 100% {
+    background: #0b0c1a;
+  }
+}
+
+.myText {
+  display: none;
+  position: relative;
+  text-align: center;
+  margin: 0 auto;
+  width: 100vw;
+  height: 20vh;
+  top: 70px;
+  background: none;
+}
+
+.myText .KMF {
+  font-size: 4rem;
+  font-weight: 500;
+  text-align: center;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  display: inline-block;
+  font-family: 'Dosis', sans-serif;
+  color: #eaf7ff;
+  -webkit-animation: text-animation 3s infinite;
+          animation: text-animation 3s infinite;
+}
+
+@-webkit-keyframes text-animation {
+  0% {
+    text-shadow: 5px 5px 10px #000, 10px 10px 10px #00000000,   0px 0px 30px #00000000, 0px 0px 40px #00000000;
+  }
+  50% {
+    text-shadow: -5px 5px 10px #000, -10px 10px 10px #00000000,  0px 0px 30px #00000000, 0px 0px 40px #00000000;
+  }
+  100% {
+    text-shadow: 5px 5px 10px #000, 10px 10px 10px #00000000,   0px 0px 30px #00000000, 0px 0px 40px #00000000;
+  }
+}
+
+@keyframes text-animation {
+  0% {
+    text-shadow: 5px 5px 10px #000, 10px 10px 10px #00000000,   0px 0px 30px #00000000, 0px 0px 40px #00000000;
+  }
+  50% {
+    text-shadow: -5px 5px 10px #000, -10px 10px 10px #00000000,  0px 0px 30px #00000000, 0px 0px 40px #00000000;
+  }
+  100% {
+    text-shadow: 5px 5px 10px #000, 10px 10px 10px #00000000,   0px 0px 30px #00000000, 0px 0px 40px #00000000;
+  }
+}
+
+.buttons-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 60%;
+  position: absolute;
+  display: none;
+  top: 40px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 25%;
+  width: 60px;
+  height: 60px;
+  position: relative;
+  box-shadow: -12px -14px 17px -6px rgba(0, 0, 0, 0.38);
+  -webkit-box-shadow: -12px -14px 17px -6px rgba(0, 0, 0, 0.38);
+  -moz-box-shadow: -12px -14px 17px -6px rgba(0, 0, 0, 0.38);
+  background: -webkit-gradient(linear, left top, left bottom, from(white), to(#c7c8c9));
+  background: linear-gradient(white, #c7c8c9);
+  margin-bottom: 1em;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.button:hover {
+  cursor: pointer;
+  -webkit-box-shadow: 0px 0px 10px 6px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 0px 10px 6px rgba(0, 0, 0, 0.1);
+  color: white;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.linkedin:hover {
+  background: #0e76a8;
+}
+
+.twitter:hover {
+  background: #1da1f2;
+}
+
+.github:hover {
+  background: black;
+}
+
+.codepen:hover {
+  background: #1e1f26;
+}
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/icon" href="/images/favicon.ico"/>
+    <link rel="stylesheet" href="/SCSS/main.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"/>
+    <title>Somesh</title>
+</head>
+<body>
+    <div class="header">
+        <div class="switch">
+            <input type="checkbox" name="lightswitch" id="lightswitch" onclick="bulbActionFunction()" indeterminate />
+            <span class="shadow"></span>
+            <label id="lightswitchid" class="lightswitchclass" for="lightswitch"></label>
+        </div>
+        <div class="area">
+            <div class="wire"></div>
+            <div class="fixture">
+              <div class="strip"></div>
+              <div class="strip"></div>
+              <div class="strip"></div>
+            </div>
+            <div id="bulb" class="off">
+              <div class="zig"></div>
+              <div class="zig"></div>
+              <div class="zig"></div>
+            </div>
+        </div>
+        <div class='buttons-container'>
+            <div class='button linkedin' onClick="window.open('https://www.linkedin.com/in/somesh-khandelwal-269755195/','mywindow');">
+              <i class="fab fa-linkedin fa-2x"></i>
+            </div>
+            <div class='button twitter' onClick="window.open('https://twitter.com/someshvk','mywindow');">
+              <i class="fab fa-twitter fa-2x"></i>
+            </div>
+            <div class='button github' onClick="window.open('https://github.com/someshvk','mywindow');">
+              <i class="fab fa-github fa-2x"></i>
+            </div>
+            <div class='button codepen' onClick="window.open('https://codepen.io/someshvk','mywindow');">
+              <i class="fab fa-codepen fa-2x"></i>
+            </div>
+        </div>
+    </div>
+    <div id="kmfid" class="myText">
+        <div class="KMF">Somesh Khandelwal</div>
+    </div>
+    <script src="/main.js" type="text/javascript"></script>
+</body>
+</html>
